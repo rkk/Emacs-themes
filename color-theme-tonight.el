@@ -48,11 +48,11 @@
      (font-lock-doc-string-face ((t (:foreground "#4e9a06"))))
      (font-lock-string-face ((t (:foreground "#73d216"))))
      ;; (font-lock-keyword-face ((t (:bold t :foreground "#729fcf"))))
-	 (font-lock-keyword-face ((t (:bold nil :foreground "#729fcf"))))
+	 (font-lock-keyword-face ((t (:weight normal :bold nil :foreground "#729fcf"))))
      (font-lock-builtin-face ((t (:foreground "#ec6427"))))
      (font-lock-function-name-face ((t (:underline t :foreground "#c4a000"))))
      (font-lock-variable-name-face ((t (nil))))
-	 (font-lock-variable-name-face ((t (:bold nil :foreground "#eeeeee"))))
+	 (font-lock-variable-name-face ((t (:weight normal :bold nil :foreground "#eeeeee"))))
      (font-lock-preprocessor-face ((t (:foreground "#c4a000"))))
      (font-lock-constant-face ((t (:foreground "#729fcf"))))
      (font-lock-type-face ((t (:underline nil :foreground "#d3d7cf"))))
@@ -96,7 +96,7 @@
 	 (diff-file-header ((t (:foreground "#61635e" :background "#000000"))))
 	 
 	 ;; Terminal
-	 (term-ls-directory ((t (:foreground "#CCDD55"))))
+	 (term-ls-directory ((t (:foreground "#4e9a06"))))
 	 (term-prompt ((t (:foreground "#5F5A60"))))
 	 (term-default ((t (:foreground "#EEE0E0" :background "#22252A"))))
 
@@ -120,6 +120,14 @@
      ;; Info
      (info-xref ((t (:foreground "#729fcf"))))
      (info-xref-visited ((t (:foreground "#ad7fa8"))))
+
+	 ;; CSS-mode
+	 (css-selector ((t (:underline nil :foreground "#c4a000"))))
+
+	 ;; Speedbar
+	 (speedbar-file-face ((t (:underline nil :foreground "#d3d7cf"))))
+	 (speedbar-directory-face ((t (:underline nil :foreground "#4e9a06"))))
+	 (speedbar-selected-face ((t (:underline nil :foreground "#c4a000"))))
 )))
 
 (provide 'color-theme-tonight)
