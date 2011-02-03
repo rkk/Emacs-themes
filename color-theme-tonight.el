@@ -31,7 +31,7 @@
 (defun color-theme-tonight ()
   "Color theme for Emacs by Rasmus K. Kristiansen <http://blog.80pct.org>. Based on the Subdued color palette."
   (interactive)
-  
+
   (color-theme-install
    '(color-theme-tonight
      ((foreground-color . "#d3d7cf")
@@ -42,14 +42,16 @@
 
      ;;; Standard font lock faces
      (default ((t (nil))))
-     (font-lock-comment-face ((t (:foreground "#61635e"))))
-     (font-lock-comment-delimiter-face ((t (:bold nil :foreground "#61635e"))))
+     (font-lock-comment-face ((t (:bold nil :italic nil :foreground "#61635e" :slant normal :weight normal))))
+     (font-lock-comment-delimiter-face ((t (:bold nil :italic nil :foreground "#61635e" :slant normal :weight normal))))
      (font-lock-doc-face ((t (:foreground "#4e9a06"))))
      (font-lock-doc-string-face ((t (:foreground "#4e9a06"))))
      (font-lock-string-face ((t (:foreground "#73d216"))))
      ;; (font-lock-keyword-face ((t (:bold t :foreground "#729fcf"))))
 	 (font-lock-keyword-face ((t (:weight normal :bold nil :foreground "#729fcf"))))
-     (font-lock-builtin-face ((t (:foreground "#ec6427"))))
+     ;;(font-lock-builtin-face ((t (:foreground "#ec6427"))))
+	 ;; For PHP-mode (enhanced version), built-in functions equal keyword-face
+	 (font-lock-builtin-face ((t (:weight normal :bold nil :foreground "#729fcf"))))
      (font-lock-function-name-face ((t (:underline t :foreground "#c4a000"))))
      (font-lock-variable-name-face ((t (nil))))
 	 (font-lock-variable-name-face ((t (:weight normal :bold nil :foreground "#eeeeee"))))
@@ -74,14 +76,14 @@
      ;; Emacs interface
 	 (fringe ((t (:background "#000000"))))
      (border ((t (:background "#0f0f0f"))))
-     (mode-line ((t (:background "#1f1f1f" :foreground "#eeeeec"))))
-     (mode-line-buffer-id ((t (:background "#1f1f1f" :foreground "#eeeeec"))))
-     (mode-line-inactive ((t (:background "#1f1f1f" :foreground "#888a85"))))
-     (minibuffer-prompt ((t (:bold nil :foreground "#ec6427"))))
-     (region ((t (:foreground "#ffffff" :background "#2e3436"))))
+     (mode-line ((t (:background "#1f1f1f" :foreground "#eeeeec" :box (:line-width 1 :color "#000000")))))
+     (mode-line-buffer-id ((t (:bold nil :background "#1f1f1f" :foreground "#eeeeec" :weight normal))))
+     (mode-line-inactive ((t (:background "#1f1f1f" :foreground "#888a85" :box (:line-width 1 :color "#000000")))))
+     (minibuffer-prompt ((t (:bold nil :foreground "#ec6427" :weight normal))))
+     (region ((t (:foreground "#eeeeec" :background "#8A542D"))))
 
      ;; Parenthesis matching
-     (show-paren-match-face ((t (:foreground "#2e3436" :background "#73d216"))))
+     (show-paren-match-face ((t (:foreground "#2e3436" :background "#c4a000"))))
      (show-paren-mismatch-face ((t (:foreground "#2e3436" :background "#ef2929"))))
 
      ;; Line highlighting
@@ -96,9 +98,9 @@
 	 (diff-file-header ((t (:foreground "#61635e" :background "#000000"))))
 	 
 	 ;; Terminal
-	 (term-ls-directory ((t (:foreground "#4e9a06"))))
-	 (term-prompt ((t (:foreground "#5F5A60"))))
-	 (term-default ((t (:foreground "#EEE0E0" :background "#22252A"))))
+	 (term-ls-directory ((t (:foreground "#4e9a06" :background "#000000"))))
+	 (term-prompt ((t (:foreground "#ec6427" :background "#000000"))))
+	 (term-default ((t (:foreground "#EEE0E0" :background "#000000"))))
 
 	 ;; Auto-complete
 	 (ac-candidate-face ((t (:background "#1f1f1f" :foreground "#eeeeec"))))
@@ -128,6 +130,9 @@
 	 (speedbar-file-face ((t (:underline nil :foreground "#d3d7cf"))))
 	 (speedbar-directory-face ((t (:underline nil :foreground "#4e9a06"))))
 	 (speedbar-selected-face ((t (:underline nil :foreground "#c4a000"))))
+
+	 ;; Bookmark
+	 (bm-face ((t (:foreground "#ffffff" :background "#4e9a06"))))
 )))
 
 (provide 'color-theme-tonight)
