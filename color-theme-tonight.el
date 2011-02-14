@@ -103,7 +103,7 @@
 	 (term-default ((t (:foreground "#EEE0E0" :background "#000000"))))
 
 	 ;; Auto-complete
-	 (ac-candidate-face ((t (:background "#1f1f1f" :foreground "#eeeeec"))))
+	 (ac-candidate-face ((t (:foreground "#eeeeec" :background "#1f1f1f"))))
 	 (ac-selection-face ((t (:foreground "#d3d7cf" :background "#8A542D"))))
 	 (ac-gtags-candidate-face ((t (:foreground "#d3d7cf" :background "#8A542D"))))
 	 (ac-gtags-selection-face ((t (:foreground "#d3d7cf" :background "#8A542D"))))
