@@ -28,10 +28,11 @@
 ;;
 
 (require 'color-theme)
+
 (defun color-theme-tonight ()
   "Color theme for Emacs by Rasmus K. Kristiansen <http://blog.80pct.org>. Based on the Subdued color palette."
   (interactive)
-
+  
   (color-theme-install
    '(color-theme-tonight
      ((foreground-color . "#d3d7cf")
@@ -42,6 +43,7 @@
 
      ;;; Standard font lock faces
      (default ((t (nil))))
+	 (default ((t (:foreground "#d3d7cf" :background "#000000"))))
      (font-lock-comment-face ((t (:bold nil :italic nil :foreground "#61635e" :slant normal :weight normal))))
      (font-lock-comment-delimiter-face ((t (:bold nil :italic nil :foreground "#61635e" :slant normal :weight normal))))
      (font-lock-doc-face ((t (:foreground "#4e9a06"))))
@@ -88,7 +90,10 @@
 
      ;; Line highlighting
      (highlight ((t (:background "#1f1f1f" :foreground nil))))
-     (highlight-current-line-face ((t (:background "#1f1f1f" :foreground nil))))
+     (highlight-current-line-face ((t (:background "#222222" :foreground nil))))
+
+	 ;; Line numbering (linum)
+	 (linum ((t (:background "#1f1f1f" :foreground "#888a85"))))
 
 	 ;; Diff
 	 (diff-added       ((t (:background "#4e9a06"))))
@@ -133,6 +138,11 @@
 
 	 ;; Bookmark
 	 (bm-face ((t (:foreground "#ffffff" :background "#4e9a06"))))
+
+	 ;; Org-mode
+	 (org-level-1 ((t (:foreground "#c4a000" :underline nil))))
+	 (org-level-2 ((t (:foreground "#888a85" :underline nil))))
+	 (org-level-3 ((t (:foreground "#888a85" :underline nil))))
 )))
 
 (provide 'color-theme-tonight)
