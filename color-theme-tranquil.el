@@ -36,9 +36,9 @@
      ((background-color . "#22252A")
       (background-mode . dark)
       (border-color . "black")
-      (cursor-color . "green")
+      (cursor-color . "white")
       (foreground-color . "#EEE0E0")
-      (mouse-color . "black"))
+      (mouse-color . "white"))
      (default ((t (:background "#22252A" :foreground "#eeeeee"))))
      (fringe ((t (:background "#22252A"))))
      ;;(mode-line ((t (:foreground "#000000" :background "#dddddd" :box t))))
@@ -71,4 +71,11 @@
 	 (paren-face-match ((t (:foreground "#ffffff"  :background "#32cd32"))))
      (minibuffer-prompt ((t (:foreground "#ec6427"))))
      (font-lock-warning-face ((t (:foreground "#EEE0E0"))))
+
+	 ;; Line highlighting
+     (highlight ((t (:background "#000000" :foreground "white"))))
+     (highlight-current-line-face ((t (:background "#222222" :foreground nil))))
+
+	 ;; Cursor
+	 (cursor ((t (:foreground "black" :background "white"))))
      )))
