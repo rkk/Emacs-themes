@@ -28,6 +28,14 @@
 ;;
 
 (require 'color-theme)
+(font-lock-add-keywords
+ 'php-mode '(("\\(\\[\\|\\]\\|[|!\\.\\+\\=\\&]\\|-\\|\\/\\|\\:\\|\\%\\|\\*\\|,\\|(\\|)\\|>\\ |<\\|{\\|}\\)" 1 font-lock-operator-face )
+             ("\\(;\\)" 1 font-lock-end-statement )))
+
+(make-face 'font-lock-operator-face)
+(make-face 'font-lock-end-statement)
+(setq font-lock-operator-face 'font-lock-operator-face)
+(setq font-lock-end-statement 'font-lock-end-statement)
 
 (defun color-theme-tonight ()
   "Color theme for Emacs by Rasmus K. Kristiansen <http://blog.80pct.org>. Based on the Subdued color palette."
@@ -38,12 +46,16 @@
      ((foreground-color . "#d3d7cf")
       (background-color . "#000000")
       (background-mode . dark)
-      (cursor-color . "#73d216")
-      (mouse-color . "#73d216"))
+     (cursor-color . "#729fcf")
+      (mouse-color . "#729fcf"))
 
      ;;; Standard font lock faces
      (default ((t (nil))))
+	 (italic ((t (nil))))
+	 
 	 (default ((t (:foreground "#d3d7cf" :background "#000000"))))
+	 (cursor  ((t (:foreground "white"   :background "#729fcf"))))
+	 
      (font-lock-comment-face ((t (:bold nil :italic nil :foreground "#61635e" :slant normal :weight normal))))
      (font-lock-comment-delimiter-face ((t (:bold nil :italic nil :foreground "#61635e" :slant normal :weight normal))))
      (font-lock-doc-face ((t (:foreground "#4e9a06"))))
@@ -58,10 +70,18 @@
      (font-lock-variable-name-face ((t (nil))))
 	 (font-lock-variable-name-face ((t (:weight normal :bold nil :foreground "#eeeeee"))))
      (font-lock-preprocessor-face ((t (:foreground "#c4a000"))))
+	 (font-lock-operator-face ((t (:foreground "#c4a000"))))
+	 (font-lock-end-statement ((t (:foreground "#c4a000"))))
      (font-lock-constant-face ((t (:foreground "#729fcf"))))
      (font-lock-type-face ((t (:underline nil :foreground "#d3d7cf"))))
      ;; (font-lock-warning-face ((t (:foreground "#cc0000"))))
 	 (font-lock-warning-face ((t (:foreground "#d3d7cf"))))
+
+	 ;; ECB
+	 (ecb-default-highlight-face ((t (:foreground "black" :background "#c4a000" :underline nil))))
+	 (ecb-default-general-face ((t (:foreground "#d3d7cf" :background "black" :underline nil))))
+	 (ecb-method-face ((t (:background "black" :underline nil))))
+								  
 
 	 ;; Flymake
 	 (flymake-errline ((t (:foreground "#d3d7cf" :background "#cc0000"))))
@@ -79,7 +99,8 @@
 	 (fringe ((t (:background "#000000"))))
      (border ((t (:background "#0f0f0f"))))
      (mode-line ((t (:background "#1f1f1f" :foreground "#eeeeec" :box (:line-width 1 :color "#000000")))))
-     (mode-line-buffer-id ((t (:bold nil :background "#1f1f1f" :foreground "#eeeeec" :weight normal))))
+     ;; (mode-line-buffer-id ((t (:bold nil :background "#1f1f1f" :foreground "#eeeeec" :weight normal))))
+	 (mode-line-buffer-id ((t (:bold nil :background "#1f1f1f" :foreground "#edd400" :weight normal))))
      (mode-line-inactive ((t (:background "#1f1f1f" :foreground "#888a85" :box (:line-width 1 :color "#000000")))))
      (minibuffer-prompt ((t (:bold nil :foreground "#ec6427" :weight normal))))
      (region ((t (:foreground "#eeeeec" :background "#8A542D"))))
@@ -141,8 +162,13 @@
 
 	 ;; Org-mode
 	 (org-level-1 ((t (:foreground "#c4a000" :underline nil))))
-	 (org-level-2 ((t (:foreground "#888a85" :underline nil))))
-	 (org-level-3 ((t (:foreground "#888a85" :underline nil))))
+	 (org-level-2 ((t (:foreground "#c4a000" :underline nil))))
+	 (org-level-3 ((t (:foreground "#c4a000" :underline nil))))
+	 (org-level-4 ((t (:foreground "#c4a000" :underline nil))))
+	 (org-todo    ((t (:foreground "#c4a000"   :background "#222222" :underline nil))))
+
+	 ;; Indentation
+	 (highlight-indent-face ((t (:background "#222222"))))
 )))
 
 (provide 'color-theme-tonight)
